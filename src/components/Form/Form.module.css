@@ -18,6 +18,7 @@
 .field ::placeholder {
   color: var(--white);
 }
+
 .submit {
   background-color: var(--primary);
   border: none;

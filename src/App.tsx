@@ -1,5 +1,5 @@
 import styles from "./App.module.css";
-import Alert from "./components/Form/Alert/Alert";
+import Alert from "./components/Alert/Alert";
 import Form from "./components/Form/Form";
 import Spiners from "./components/Spiners/Spiners";
 import WeatherDetail from "./components/WeatherDetail/WeatherDetail";

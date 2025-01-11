@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import type { SearchType } from "../../types";
 import { countries } from "../../data/countries";
 import styles from "./Form.module.css";
-import { SearchType } from "../../types";
-import Alert from "./Alert/Alert";
+import Alert from "../Alert/Alert";
 
 type FormProps = {
   fetchWeather: (search: SearchType) => Promise<void>;
@@ -14,6 +14,7 @@ export default function Form({ fetchWeather }: FormProps) {
     country: "",
   });
   const [alert, setAlert] = useState("");
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
   ) => {
@@ -46,15 +47,16 @@ export default function Form({ fetchWeather }: FormProps) {
           onChange={handleChange}
         />
       </div>
+
       <div className={styles.field}>
-        <label htmlFor="country">Pais:</label>
+        <label htmlFor="country">País:</label>
         <select
           id="country"
-          value={search.country}
           name="country"
+          value={search.country}
           onChange={handleChange}
         >
-          <option value="">-- Seleccione un Pais ---</option>
+          <option value="">-- Seleccione un País ---</option>
           {countries.map((country) => (
             <option key={country.code} value={country.code}>
               {country.name}
@@ -62,6 +64,7 @@ export default function Form({ fetchWeather }: FormProps) {
           ))}
         </select>
       </div>
+
       <input className={styles.submit} type="submit" value="Consultar Clima" />
     </form>
   );
